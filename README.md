@@ -15,3 +15,10 @@ pip install numpy scipy matplotlib
 
 ## Contributing 
 This is just a simple project I dared to work on after several days of Tyhpoid fever lol. Submit a PR if you're inspired enough. 
+
+## Further Learning
+
+To learn more about the SIR model and disease modeling in general, you might find the following resources helpful:
+
+- [Compartmental models in epidemiology - Wikipedia](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology)
+- [The SIR epidemic model - Learning Scientific Programming with Python](https://scipython.com/book/chapter-8-scipy/additional-examples/the-sir-epidemic-model/)
