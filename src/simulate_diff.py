@@ -20,13 +20,15 @@ S0 = N - I0 - R0
 # A grid of time points (in days)
 t = np.linspace(0, 160, 160)
 
-# The SIR model differential equations.
-def deriv(y, t, N, beta, gamma):
-    S, I, R = y
-    dSdt = -beta * S * I / N
-    dIdt = beta * S * I / N - gamma * I
-    dRdt = gamma * I
-    return dSdt, dIdt, dRdt
+# Calculates the rate of change of susceptible, infected and recovered individuals
+def deriv(y, t, N, beta, gamma): # (Y= tuple containing the values of S I R, 
+                                 #t= time, N= total population, beta= contact rate,
+                                 #gamma= mean recovery rate)
+    
+    dSdt = -beta * S * I / N  # dSdt = rate of change of susceptible individuals
+    dIdt = beta * S * I / N - gamma * I  # dIdt = rate of change of infected individuals
+    dRdt = gamma * I  # dRdt = rate of change of recovered individuals
+    return dSdt, dIdt, dRdt   # returns a tuple containing the rates of change of S I R
 
 # Initial conditions vector
 y0 = S0, I0, R0
