@@ -3,7 +3,7 @@
 ## Dependencies
 - numpy 
 - scipy 
-- matplotlib
+- matplotlib 
 
 You can install these using pip:
 
