@@ -16,7 +16,7 @@ pip install numpy scipy matplotlib
 2. Run `python3 src/simulate_diff.py` This will display a plot showing the number of susceptible, infected, and recovered individuals over time. 
 
 ## Result 
-[T-fever-report](T-fever-report.png) 
+![T-fever-report](T-fever-report.png) 
 ## Contributing 
 This is just a simple project I dared to work on after several days of Tyhpoid fever lol. Submit a PR if you're inspired enough. 
 
