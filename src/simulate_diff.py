@@ -3,7 +3,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
 # Open the data file in read mode ('r')
-with open('data/data.txt', 'r') as f:
+with open('data.txt', 'r') as f:
     # Read the data from the file
     lines = f.readlines()
 

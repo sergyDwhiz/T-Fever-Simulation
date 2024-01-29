@@ -11,7 +11,9 @@ You can install these using pip:
 pip install numpy scipy matplotlib
 ```
 ## Usage 
-- Run the simulate_diff.py script to perform the simulation and plot the results:  `python simulate_diff.py` This will display a plot showing the number of susceptible, infected, and recovered individuals over time. 
+- Run the simulate_diff.py script to perform the simulation and plot the results:  
+1. Create the data by running `python3 src/data.py`, this creates a `data.txt` file which you can then read from. 
+2. Run `python3 src/simulate_diff.py` This will display a plot showing the number of susceptible, infected, and recovered individuals over time. 
 
 ## Contributing 
 This is just a simple project I dared to work on after several days of Tyhpoid fever lol. Submit a PR if you're inspired enough. 
