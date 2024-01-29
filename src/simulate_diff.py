@@ -8,11 +8,11 @@ with open('data.txt', 'r') as f:
     lines = f.readlines()
 
 # Parse the data
-N = int(lines[0].split('=')[1]) 
-I0 = int(lines[1].split('=')[1])
-R0 = int(lines[2].split('=')[1])
-beta = float(lines[3].split('=')[1])
-gamma = float(lines[4].split('=')[1])
+N = int(lines[0].split('=')[1].replace(',', '').strip()) 
+I0 = int(lines[1].split('=')[1].replace(',', '').strip())
+R0 = float(lines[2].split('=')[1].strip())  # Use float() instead of int()
+beta = float(lines[3].split('=')[1].strip())
+gamma = float(lines[4].split('=')[1].strip())
 
 # Everyone else, S0, is susceptible to infection initially.
 S0 = N - I0 - R0
@@ -25,9 +25,9 @@ def deriv(y, t, N, beta, gamma): # (Y= tuple containing the values of S I R,
                                  #t= time, N= total population, beta= contact rate,
                                  #gamma= mean recovery rate)
     
-    dSdt = -beta * S * I / N  # dSdt = rate of change of susceptible individuals
-    dIdt = beta * S * I / N - gamma * I  # dIdt = rate of change of infected individuals
-    dRdt = gamma * I  # dRdt = rate of change of recovered individuals
+    dSdt = -beta * S0 * I0 / N  # dSdt = rate of change of susceptible individuals
+    dIdt = beta * S0 * I0 / N - gamma * I0  # dIdt = rate of change of infected individuals
+    dRdt = gamma * I0  # dRdt = rate of change of recovered individuals
     return dSdt, dIdt, dRdt   # returns a tuple containing the rates of change of S I R
 
 # Initial conditions vector
@@ -47,7 +47,7 @@ ax.set_ylabel('Number (1000s)')
 ax.set_ylim(0,1.2)
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
-ax.grid(b=True, which='major', c='w', lw=2, ls='-')
+ax.grid(visible=True, which='major', c='w', lw=2, ls='-')
 legend = ax.legend()
 legend.get_frame().set_alpha(0.5)
 for spine in ('top', 'right', 'bottom', 'left'):
