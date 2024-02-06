@@ -49,6 +49,14 @@ ax.set_title('SIR Model Simulation')
 ax.set_xlabel('Time /days')
 ax.set_ylabel('Number (1000s)')
 ax.set_ylim(0,1.2)
+
+# Highlight the peak of the 'Infected' curve
+max_I = max(I/1000)
+max_t = t[list(I/1000).index(max_I)]
+ax.plot(max_t, max_I, 'ro')
+ax.annotate('Peak (day {:.0f})'.format(max_t), xy=(max_t, max_I), xytext=(max_t+5, max_I),
+            arrowprops=dict(facecolor='black', shrink=0.05))
+
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
 ax.grid(visible=True, which='major', c='w', lw=2, ls='-')
