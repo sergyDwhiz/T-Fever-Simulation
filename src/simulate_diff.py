@@ -42,6 +42,10 @@ ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
 ax.plot(t, S/1000, 'b', alpha=0.5, lw=2, label='Susceptible')
 ax.plot(t, I/1000, 'r', alpha=0.5, lw=2, label='Infected')
 ax.plot(t, R/1000, 'g', alpha=0.5, lw=2, label='Recovered with immunity')
+
+# Add a title to the plot
+ax.set_title('SIR Model Simulation')
+
 ax.set_xlabel('Time /days')
 ax.set_ylabel('Number (1000s)')
 ax.set_ylim(0,1.2)
