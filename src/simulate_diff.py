@@ -65,3 +65,6 @@ legend.get_frame().set_alpha(0.5)
 for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
 plt.show()
+
+# Save the plot to a file
+fig.savefig('sir_model_simulation.png') 
