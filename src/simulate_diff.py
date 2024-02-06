@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 # Open the data file in read mode ('r')
 with open('data.txt', 'r') as f:
     # Read the data from the file
-    lines = f.readlines()
+lines = f.readlines()
+plt.style.use('ggplot')
 
 # Parse the data
 N = int(lines[0].split('=')[1].replace(',', '').strip()) 
