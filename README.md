@@ -20,7 +20,7 @@ pip install numpy scipy matplotlib
 ## Contributing 
 This is just a simple project I dared to work on after several days of Tyhpoid fever lol. Submit a PR if you're inspired enough. 
 
-## Further Learning
+## Learn
 
 To learn more about the SIR model and disease modeling in general, you might find the following resources helpful:
 
