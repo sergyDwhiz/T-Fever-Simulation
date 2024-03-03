@@ -6,7 +6,7 @@ This project simulates the spread of a disease (Typhoid fever in this case) in a
 
 The SIR model is a simple mathematical model that describes the dynamics of infectious diseases in a population. It divides the population into three groups:
 
-- **Susceptible (S)**: Individuals who can catch the disease.
+- **Susceptible (S)**: Potential carriers.
 - **Infected (I)**: Individuals who have caught the disease and can spread it to susceptible individuals.
 - **Recovered (R)**: Individuals who have recovered from the disease and are now immune.
 
@@ -14,11 +14,11 @@ The model is represented by a set of differential equations that describe how in
 
 ## Understanding the Code
 
-The main part of the code is the `deriv` function, which represents the SIR model in the form of differential equations. The function takes the current number of susceptible, infected, and recovered individuals, as well as the effective contact rate (`beta`) and the recovery rate (`gamma`), and calculates the rate of change of `S`, `I`, and `R`.
+ `deriv` is the driver function, which represents the SIR model in the form of differential equations. The function takes the current number of susceptible, infected, and recovered individuals, as well as the effective contact rate (`beta`) and the recovery rate (`gamma`), and calculates the rate of change of `S`, `I`, and `R`.
 
 The `odeint` function from the `scipy.integrate` module is used to solve these differential equations and simulate the spread of the disease over time.
 
-The results of the simulation are then plotted using the `matplotlib.pyplot` module.
+The results are then plotted using the `matplotlib.pyplot` module.
 
 ## Running the Simulation
 
