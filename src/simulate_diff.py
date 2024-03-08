@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Open the data file in read mode ('r')
 with open('data.txt', 'r') as f:
     # Read the data from the file
-lines = f.readlines()
+    lines = f.readlines()
 plt.style.use('ggplot')
 
 # Parse the data
@@ -45,10 +45,7 @@ ax.plot(t, R/1000, 'g', alpha=0.5, lw=2, label='Recovered with immunity')
 # Add a title to the plot
 ax.set_title('SIR Model Simulation')
 
-<<<<<<< HEAD
 # Set labels and limits
-=======
->>>>>>> 5379aa6f5badcaf0d2c302d49ba0ffe53e89cfc7
 ax.set_xlabel('Time /days')
 ax.set_ylabel('Number (1000s)')
 ax.set_ylim(0,1.2)
@@ -60,10 +57,7 @@ ax.plot(max_t, max_I, 'ro')
 ax.annotate('Peak (day {:.0f})'.format(max_t), xy=(max_t, max_I), xytext=(max_t+5, max_I),
             arrowprops=dict(facecolor='black', shrink=0.05))
 
-<<<<<<< HEAD
 # Add grid
-=======
->>>>>>> 5379aa6f5badcaf0d2c302d49ba0ffe53e89cfc7
 ax.yaxis.set_tick_params(length=0)
 ax.xaxis.set_tick_params(length=0)
 ax.grid(visible=True, which='major', c='w', lw=2, ls='-')
@@ -75,14 +69,8 @@ legend.get_frame().set_alpha(0.5)
 # Hide spines
 for spine in ('top', 'right', 'bottom', 'left'):
     ax.spines[spine].set_visible(False)
-<<<<<<< HEAD
 
 # Show the plot
-plt.show()
-
-# Save the plot to a file
-fig.savefig('sir_model_simulation.png')
-=======
 plt.show()
 
 # Save the plot to a file
