@@ -9,7 +9,7 @@ lines = f.readlines()
 plt.style.use('ggplot')
 
 # Parse the data
-N = int(lines[0].split('=')[1].replace(',', '').strip()) 
+N = int(lines[0].split('=')[1].replace(',', '').strip())
 I0 = int(lines[1].split('=')[1].replace(',', '').strip())
 R0 = float(lines[2].split('=')[1].strip())  # Use float() instead of int()
 beta = float(lines[3].split('=')[1].strip())
@@ -22,12 +22,12 @@ S0 = N - I0 - R0
 t = np.linspace(0, 160, 160)
 
 # Calculates the rate of change of susceptible, infected and recovered individuals
-def deriv(y, t, N, beta, gamma): 
+def deriv(y, t, N, beta, gamma):
     S, I, R = y
-    dSdt = -beta * S * I / N  
-    dIdt = beta * S * I / N - gamma * I  
-    dRdt = gamma * I  
-    return dSdt, dIdt, dRdt   
+    dSdt = -beta * S * I / N
+    dIdt = beta * S * I / N - gamma * I
+    dRdt = gamma * I
+    return dSdt, dIdt, dRdt
 
 # Initial conditions vector
 y0 = S0, I0, R0
@@ -86,5 +86,4 @@ fig.savefig('sir_model_simulation.png')
 plt.show()
 
 # Save the plot to a file
-fig.savefig('sir_model_simulation.png') 
->>>>>>> 5379aa6f5badcaf0d2c302d49ba0ffe53e89cfc7
+fig.savefig('sir_model_simulation.png')
