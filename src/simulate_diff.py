@@ -1,19 +1,34 @@
 import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
+import os
 
-# Open the data file in read mode ('r')
-with open('data.txt', 'r') as f:
-    # Read the data from the file
-    lines = f.readlines()
+# Check if the data file exists
+if not os.path.exists('data.py'):
+    print("Error: data.txt does not exist.")
+    exit(1)
+
+try:
+    # Open the data file in read mode ('r')
+    with open('data.txt', 'r') as f:
+        # Read the data from the file
+        lines = f.readlines()
+except Exception as e:
+    print(f"Error reading data.txt: {e}")
+    exit(1)
+
 plt.style.use('ggplot')
 
-# Parse the data
-N = int(lines[0].split('=')[1].replace(',', '').strip())
-I0 = int(lines[1].split('=')[1].replace(',', '').strip())
-R0 = float(lines[2].split('=')[1].strip())  # Use float() instead of int()
-beta = float(lines[3].split('=')[1].strip())
-gamma = float(lines[4].split('=')[1].strip())
+try:
+    # Parse the data
+    N = int(lines[0].split('=')[1].replace(',', '').strip())
+    I0 = int(lines[1].split('=')[1].replace(',', '').strip())
+    R0 = float(lines[2].split('=')[1].strip())  # Use float() instead of int()
+    beta = float(lines[3].split('=')[1].strip())
+    gamma = float(lines[4].split('=')[1].strip())
+except Exception as e:
+    print(f"Error parsing data: {e}")
+    exit(1)
 
 # Everyone else, S0, is susceptible to infection initially.
 S0 = N - I0 - R0
